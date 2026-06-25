@@ -2,21 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 const founders = [
   {
-    initials: "—",
-    name: "[Nome do Sócio 1]",
-    role: "[Cargo · ex.: Sócio · Infraestrutura e Cloud]",
-    bio: "[Substitua por 2–3 frases descrevendo experiência real: anos de mercado, certificações relevantes (AWS, Cisco, ISO), tipos de ambiente operados e empresas/setores em que atuou. Evite jargão de marketing.]",
+    initials: "V",
+    name: "Victor [Sobrenome]",
+    role: "Sócio · Infraestrutura e Cloud",
+    bio: "[Substitua por 2–3 frases descrevendo experiência real: anos de mercado, certificações relevantes (AWS, Cisco, ISO), tipos de ambiente operados e empresas/setores em que atuou.]",
   },
   {
-    initials: "—",
-    name: "[Nome do Sócio 2]",
-    role: "[Cargo · ex.: Sócia · Dados e BI]",
+    initials: "I",
+    name: "Igor [Sobrenome]",
+    role: "Sócio · Dados e BI",
     bio: "[Substitua por 2–3 frases descrevendo experiência real com engenharia de dados, Power BI, Databricks e setores atendidos. Mencione tamanho de bases ou projetos quando possível.]",
   },
   {
-    initials: "—",
-    name: "[Nome do Sócio 3]",
-    role: "[Cargo · ex.: Sócio · Cibersegurança e Automação]",
+    initials: "M",
+    name: "Millares [Sobrenome]",
+    role: "Sócio · Cibersegurança e Automação",
     bio: "[Substitua por 2–3 frases descrevendo experiência real em segurança, ITSM e desenvolvimento de integrações. Mencione frameworks (ISO 27001, NIST) ou ferramentas (GLPI, Python) com que opera.]",
   },
 ];
