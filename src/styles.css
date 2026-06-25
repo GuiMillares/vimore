@@ -40,27 +40,33 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
 }
 
 :root {
-  /* charcoal #0E0E10 */
+  /* Vimore brand palette */
+  /* Carvão #0E0E10 */
   --background: oklch(0.155 0.003 280);
-  /* near-white but slightly warm */
-  --foreground: oklch(0.96 0.005 80);
-  --surface: oklch(0.185 0.004 280);
-  --surface-2: oklch(0.21 0.004 280);
-  --border: oklch(0.27 0.005 280);
-  --border-strong: oklch(0.36 0.006 280);
-  --muted: oklch(0.22 0.004 280);
-  --muted-foreground: oklch(0.70 0.008 90);
-  --subtle: oklch(0.55 0.008 90);
-  /* matte gold #C9A227 */
-  --accent: oklch(0.74 0.13 86);
+  /* Névoa #EDEDEF */
+  --foreground: oklch(0.945 0.002 280);
+  /* Grafite #1C1C20 */
+  --surface: oklch(0.215 0.004 280);
+  --surface-2: oklch(0.255 0.004 280);
+  --border: oklch(0.30 0.005 280);
+  --border-strong: oklch(0.40 0.006 280);
+  --muted: oklch(0.24 0.004 280);
+  /* Cinza claro #A8A8B0 */
+  --muted-foreground: oklch(0.745 0.008 280);
+  /* Cinza médio #6B6B73 */
+  --subtle: oklch(0.515 0.008 280);
+  /* Ouro fosco #C9A227 */
+  --accent: oklch(0.735 0.135 86);
   --accent-foreground: oklch(0.155 0.003 280);
-  --accent-soft: oklch(0.74 0.13 86 / 0.12);
+  /* Ouro claro #E0BE4A hover */
+  --accent-hover: oklch(0.805 0.145 88);
+  --accent-soft: oklch(0.735 0.135 86 / 0.12);
 }
 
 @layer base {
