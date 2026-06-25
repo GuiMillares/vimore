@@ -64,18 +64,18 @@ function HomePage() {
       <section className="border-b border-border">
         <div className="container-page pt-20 pb-24 md:pt-28 md:pb-32 grid gap-12 md:grid-cols-[1.5fr_1fr] md:items-end">
           <div>
-            <p className="overline-accent">vimore · Consultoria de tecnologia</p>
+            <p className="overline-accent">vimore · Parceira técnica</p>
             <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05]">
-              Tecnologia que sustenta<br/>
-              a sua operação —<br/>
-              <span className="text-accent">não a complica.</span>
+              Vamos entender<br/>
+              o que está travando<br/>
+              <span className="text-accent">a sua operação.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg text-muted-foreground">
               Somos três engenheiros que operam ambientes de produção todos os
-              dias. Ajudamos pequenas e médias empresas brasileiras a estabilizar
-              infraestrutura, organizar dados, proteger informação e automatizar
-              processos. Sem jargão, sem terceirização, com responsabilidade
-              técnica de quem assina o código.
+              dias. Sentamos com o seu time, escutamos o problema na linguagem
+              do negócio e devolvemos uma solução técnica que cabe na sua
+              realidade — infraestrutura, dados, segurança e automação, sem
+              jargão e sem terceirização invisível.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
