@@ -172,11 +172,11 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="vimore — início">
-          <span aria-hidden className="inline-block h-2 w-2 rotate-45 bg-accent" />
-          <span className="font-display text-[1.05rem] font-medium tracking-tight">
-            vimore<span className="text-accent">.</span>IT
+        <Link to="/" className="group inline-flex flex-col leading-none" aria-label="vimore — início">
+          <span className="font-display text-[1.35rem] font-medium tracking-tight lowercase">
+            vimore<span className="text-accent">.</span>
           </span>
+          <span aria-hidden className="mt-1 h-[2px] w-9 bg-accent transition-all group-hover:w-12" />
         </Link>
         <nav aria-label="Navegação principal" className="hidden md:block">
           <ul className="flex items-center gap-8 text-sm">
