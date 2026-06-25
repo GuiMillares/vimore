@@ -1,0 +1,36 @@
+# Aevum IT
+
+> Consultoria brasileira de tecnologia para pequenas e médias empresas (PMEs).
+> Três engenheiros sócios atendem direto, sem pré-venda terceirizada e sem revenda de software.
+> Base em São Paulo · Brasil. Atendimento presencial na região metropolitana de São Paulo e remoto para todo o Brasil.
+
+## Serviços
+
+A Aevum IT atua em quatro frentes de engenharia, com responsabilidade técnica direta dos sócios:
+
+1. **Infraestrutura Inteligente e Cloud** — arquitetura de redes corporativas (roteadores, switches, access points, cabeamento estruturado), migração e sustentação em AWS com Docker, Terraform e Linux Server, e monitoramento proativo com Zabbix e Grafana.
+2. **Dados e Inteligência de Negócios (BI)** — dashboards em Power BI, engenharia de dados (ETL, modelagem), e otimização de custos em ambientes como Databricks.
+3. **Cibersegurança e Suporte Técnico (ITSM)** — diagnóstico de aderência a normas ISO de segurança (avaliação, não certificação formal), Service Desk com GLPI e ZohoDesk, políticas de acesso e segmentação de redes.
+4. **Automação, Integrações e Desenvolvimento** — rotinas em Python e Terraform, integração de ERPs/CRMs/marketing via APIs REST, Webhooks, OAuth2 e MCP, e presença digital em WordPress, React, Node.js e Firebase.
+
+## Modelo de atendimento
+
+- Atendimento direto pelos três sócios; sem pré-venda terceirizada.
+- Sem revenda de software nem comissão de fabricante — recomendamos a ferramenta adequada ao problema.
+- Projetos com escopo fechado: preço fechado, pagamento por marco. Sustentação recorrente: pacote mensal de horas com SLA acordado.
+- Conversa inicial gratuita (~30 minutos), sem proposta automática.
+
+## Páginas-chave
+
+- [Início](/) — visão geral e proposta de valor.
+- [Serviços](/servicos) — detalhamento das quatro frentes e FAQ.
+- [Sobre](/sobre) — fundadores, origem e princípios.
+- [Contato](/contato) — formulário, e-mail, telefone e localização.
+- [Insights](/blog) — notas técnicas para decisores de TI.
+
+## Contato
+
+- E-mail: contato@aevum.it
+- Telefone / WhatsApp: +55 (11) 0000-0000
+- Localização: São Paulo · SP · Brasil
+- Horário: Seg–Sex · 9h às 18h (resposta em até 1 dia útil)
