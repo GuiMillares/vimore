@@ -12,13 +12,13 @@ const schema = z.object({
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Aevum IT · Fale com um engenheiro sênior" },
+      { title: "Contato — vimore · Fale com um engenheiro sênior" },
       {
         name: "description",
         content:
-          "Fale direto com os sócios da Aevum IT. Atendimento em São Paulo e remoto para todo o Brasil. E-mail, telefone e formulário disponíveis nesta página.",
+          "Fale direto com os sócios da vimore. Atendimento em São Paulo e remoto para todo o Brasil. E-mail, telefone e formulário disponíveis nesta página.",
       },
-      { property: "og:title", content: "Contato — Aevum IT" },
+      { property: "og:title", content: "Contato — vimore" },
       { property: "og:description", content: "Atendimento direto pelos sócios. Sem pré-venda terceirizada." },
       { property: "og:url", content: "/contato" },
     ],
@@ -111,7 +111,7 @@ function ContatoPage() {
 
           <aside aria-label="Canais diretos" className="md:border-l md:border-border md:pl-10">
             <dl className="space-y-8">
-              <Channel k="E-mail" v={<a className="text-foreground hover:text-accent transition" href="mailto:contato@aevum.it">contato@aevum.it</a>} />
+              <Channel k="E-mail" v={<a className="text-foreground hover:text-accent transition" href="mailto:contato@vimore.com.br">contato@vimore.com.br</a>} />
               <Channel k="Telefone · WhatsApp" v={<a className="text-foreground hover:text-accent transition" href="tel:+5511000000000">+55 (11) 0000-0000</a>} />
               <Channel k="Localização" v={<span className="text-foreground">São Paulo · SP<br/>Atendimento na região metropolitana</span>} />
               <Channel k="Horário" v={<span className="text-foreground">Seg–Sex · 9h às 18h<br/>(Resposta em até 1 dia útil)</span>} />

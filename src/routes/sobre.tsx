@@ -31,13 +31,13 @@ const principles = [
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre — Aevum IT · Três engenheiros, um time responsável" },
+      { title: "Sobre — vimore · Três engenheiros, um time responsável" },
       {
         name: "description",
         content:
-          "Conheça os fundadores da Aevum IT — três engenheiros brasileiros que operam ambientes de produção e atendem PMEs com responsabilidade técnica direta.",
+          "Conheça os fundadores da vimore — três engenheiros brasileiros que operam ambientes de produção e atendem PMEs com responsabilidade técnica direta.",
       },
-      { property: "og:title", content: "Sobre a Aevum IT" },
+      { property: "og:title", content: "Sobre a vimore" },
       { property: "og:description", content: "Três engenheiros sênior, atendimento direto, sem revenda." },
       { property: "og:url", content: "/sobre" },
     ],
@@ -57,7 +57,7 @@ function SobrePage() {
             <span className="text-accent">que atendem direto.</span>
           </h1>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
-            A Aevum IT nasceu da percepção repetida de que a maior parte das
+            A vimore nasceu da percepção repetida de que a maior parte das
             consultorias de tecnologia coloca um engenheiro júnior na frente do
             cliente e cobra preço de sênior. Decidimos inverter o modelo:
             atendimento direto pelos três sócios, com transparência de escopo,

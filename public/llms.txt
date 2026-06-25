@@ -1,4 +1,4 @@
-# Aevum IT
+# vimore
 
 > Consultoria brasileira de tecnologia para pequenas e médias empresas (PMEs).
 > Três engenheiros sócios atendem direto, sem pré-venda terceirizada e sem revenda de software.
@@ -6,7 +6,7 @@
 
 ## Serviços
 
-A Aevum IT atua em quatro frentes de engenharia, com responsabilidade técnica direta dos sócios:
+A vimore atua em quatro frentes de engenharia, com responsabilidade técnica direta dos sócios:
 
 1. **Infraestrutura Inteligente e Cloud** — arquitetura de redes corporativas (roteadores, switches, access points, cabeamento estruturado), migração e sustentação em AWS com Docker, Terraform e Linux Server, e monitoramento proativo com Zabbix e Grafana.
 2. **Dados e Inteligência de Negócios (BI)** — dashboards em Power BI, engenharia de dados (ETL, modelagem), e otimização de custos em ambientes como Databricks.
@@ -30,7 +30,7 @@ A Aevum IT atua em quatro frentes de engenharia, com responsabilidade técnica d
 
 ## Contato
 
-- E-mail: contato@aevum.it
+- E-mail: contato@vimore.com.br
 - Telefone / WhatsApp: +55 (11) 0000-0000
 - Localização: São Paulo · SP · Brasil
 - Horário: Seg–Sex · 9h às 18h (resposta em até 1 dia útil)
