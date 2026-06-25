@@ -72,7 +72,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Aevum IT",
+  name: "vimore",
   url: "/",
   logo: "/logo.svg",
   description:
@@ -94,7 +94,7 @@ const orgJsonLd = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Aevum IT",
+  name: "vimore",
   image: "/logo.svg",
   priceRange: "$$",
   address: {
@@ -112,8 +112,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0E0E10" },
-      { name: "author", content: "Aevum IT" },
-      { property: "og:site_name", content: "Aevum IT" },
+      { name: "author", content: "vimore" },
+      { property: "og:site_name", content: "vimore" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -172,11 +172,11 @@ function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5" aria-label="Aevum IT — início">
-          <span aria-hidden className="inline-block h-2 w-2 rotate-45 bg-accent" />
-          <span className="font-display text-[1.05rem] font-medium tracking-tight">
-            Aevum<span className="text-accent">.</span>IT
+        <Link to="/" className="group inline-flex flex-col leading-none" aria-label="vimore — início">
+          <span className="font-display text-[1.35rem] font-medium tracking-tight lowercase">
+            vimore<span className="text-accent">.</span>
           </span>
+          <span aria-hidden className="mt-1 h-[2px] w-9 bg-accent transition-all group-hover:w-12" />
         </Link>
         <nav aria-label="Navegação principal" className="hidden md:block">
           <ul className="flex items-center gap-8 text-sm">
@@ -263,16 +263,19 @@ function SiteFooter() {
     <footer className="border-t border-border mt-24">
       <div className="container-page py-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span aria-hidden className="inline-block h-2 w-2 rotate-45 bg-accent" />
-            <span className="font-display text-[1.05rem] font-medium tracking-tight">
-              Aevum<span className="text-accent">.</span>IT
+          <div className="inline-flex flex-col leading-none">
+            <span className="font-display text-[1.35rem] font-medium tracking-tight lowercase">
+              vimore<span className="text-accent">.</span>
+            </span>
+            <span aria-hidden className="mt-1 h-[2px] w-9 bg-accent" />
+            <span className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-subtle">
+              Infra · Dados · Segurança
             </span>
           </div>
-          <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Consultoria de tecnologia para pequenas e médias empresas
-            brasileiras. Infraestrutura, dados, segurança e automação — feitos
-            por engenheiros que operam ambientes de produção.
+          <p className="mt-6 max-w-sm text-sm text-muted-foreground">
+            Parceira técnica próxima para pequenas e médias empresas
+            brasileiras. Três engenheiros que entendem o que está travando
+            a sua operação — e resolvem.
           </p>
           <p className="mt-6 overline">São Paulo · Brasil</p>
         </div>
@@ -291,7 +294,7 @@ function SiteFooter() {
         <div>
           <p className="overline">Contato</p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a className="text-muted-foreground hover:text-accent transition" href="mailto:contato@aevum.it">contato@aevum.it</a></li>
+            <li><a className="text-muted-foreground hover:text-accent transition" href="mailto:contato@vimore.com.br">contato@vimore.com.br</a></li>
             <li><a className="text-muted-foreground hover:text-accent transition" href="tel:+5511000000000">+55 (11) 0000-0000</a></li>
             <li className="text-muted-foreground">Seg–Sex · 9h às 18h</li>
           </ul>
@@ -299,7 +302,7 @@ function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="container-page flex flex-col md:flex-row items-start md:items-center justify-between gap-3 py-6 text-xs text-subtle">
-          <p>© {year} Aevum IT. Todos os direitos reservados.</p>
+          <p>© {year} vimore. Todos os direitos reservados.</p>
           <p className="font-mono">CNPJ 00.000.000/0001-00 · v1.0</p>
         </div>
       </div>

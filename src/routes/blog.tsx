@@ -15,13 +15,13 @@ const posts = [
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Insights — Aevum IT · Notas técnicas para decisores de TI" },
+      { title: "Insights — vimore · Notas técnicas para decisores de TI" },
       {
         name: "description",
         content:
           "Artigos curtos e práticos sobre infraestrutura, dados, segurança e automação para gestores de pequenas e médias empresas no Brasil.",
       },
-      { property: "og:title", content: "Insights — Aevum IT" },
+      { property: "og:title", content: "Insights — vimore" },
       { property: "og:description", content: "Notas técnicas para quem toma decisão de TI em PMEs." },
       { property: "og:url", content: "/blog" },
     ],

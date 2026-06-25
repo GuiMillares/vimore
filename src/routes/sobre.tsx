@@ -2,21 +2,21 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 const founders = [
   {
-    initials: "—",
-    name: "[Nome do Sócio 1]",
-    role: "[Cargo · ex.: Sócio · Infraestrutura e Cloud]",
-    bio: "[Substitua por 2–3 frases descrevendo experiência real: anos de mercado, certificações relevantes (AWS, Cisco, ISO), tipos de ambiente operados e empresas/setores em que atuou. Evite jargão de marketing.]",
+    initials: "V",
+    name: "Victor [Sobrenome]",
+    role: "Sócio · Infraestrutura e Cloud",
+    bio: "[Substitua por 2–3 frases descrevendo experiência real: anos de mercado, certificações relevantes (AWS, Cisco, ISO), tipos de ambiente operados e empresas/setores em que atuou.]",
   },
   {
-    initials: "—",
-    name: "[Nome do Sócio 2]",
-    role: "[Cargo · ex.: Sócia · Dados e BI]",
+    initials: "I",
+    name: "Igor [Sobrenome]",
+    role: "Sócio · Dados e BI",
     bio: "[Substitua por 2–3 frases descrevendo experiência real com engenharia de dados, Power BI, Databricks e setores atendidos. Mencione tamanho de bases ou projetos quando possível.]",
   },
   {
-    initials: "—",
-    name: "[Nome do Sócio 3]",
-    role: "[Cargo · ex.: Sócio · Cibersegurança e Automação]",
+    initials: "M",
+    name: "Millares [Sobrenome]",
+    role: "Sócio · Cibersegurança e Automação",
     bio: "[Substitua por 2–3 frases descrevendo experiência real em segurança, ITSM e desenvolvimento de integrações. Mencione frameworks (ISO 27001, NIST) ou ferramentas (GLPI, Python) com que opera.]",
   },
 ];
@@ -31,13 +31,13 @@ const principles = [
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre — Aevum IT · Três engenheiros, um time responsável" },
+      { title: "Sobre — vimore · Três engenheiros, um time responsável" },
       {
         name: "description",
         content:
-          "Conheça os fundadores da Aevum IT — três engenheiros brasileiros que operam ambientes de produção e atendem PMEs com responsabilidade técnica direta.",
+          "Conheça os fundadores da vimore — três engenheiros brasileiros que operam ambientes de produção e atendem PMEs com responsabilidade técnica direta.",
       },
-      { property: "og:title", content: "Sobre a Aevum IT" },
+      { property: "og:title", content: "Sobre a vimore" },
       { property: "og:description", content: "Três engenheiros sênior, atendimento direto, sem revenda." },
       { property: "og:url", content: "/sobre" },
     ],
@@ -57,7 +57,7 @@ function SobrePage() {
             <span className="text-accent">que atendem direto.</span>
           </h1>
           <p className="mt-8 text-lg text-muted-foreground max-w-2xl">
-            A Aevum IT nasceu da percepção repetida de que a maior parte das
+            A vimore nasceu da percepção repetida de que a maior parte das
             consultorias de tecnologia coloca um engenheiro júnior na frente do
             cliente e cobra preço de sênior. Decidimos inverter o modelo:
             atendimento direto pelos três sócios, com transparência de escopo,

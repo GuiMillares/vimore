@@ -133,13 +133,13 @@ const faqs = [
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — Aevum IT · Infraestrutura, dados, segurança e automação" },
+      { title: "Serviços — vimore · Infraestrutura, dados, segurança e automação" },
       {
         name: "description",
         content:
           "Quatro frentes de engenharia para PMEs no Brasil: infraestrutura e cloud na AWS, dados e BI em Power BI, cibersegurança ISO e ITSM, automação e integrações com Python e APIs.",
       },
-      { property: "og:title", content: "Serviços — Aevum IT" },
+      { property: "og:title", content: "Serviços — vimore" },
       { property: "og:description", content: "Infraestrutura, dados, cibersegurança e automação para empresas em crescimento." },
       { property: "og:url", content: "/servicos" },
     ],
@@ -164,7 +164,7 @@ export const Route = createFileRoute("/servicos")({
             "@type": "Service",
             name: s.title,
             description: s.lede,
-            provider: { "@type": "Organization", name: "Aevum IT" },
+            provider: { "@type": "Organization", name: "vimore" },
             areaServed: { "@type": "Country", name: "Brasil" },
           })),
         }),

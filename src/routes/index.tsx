@@ -3,13 +3,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aevum IT — Consultoria de tecnologia para empresas em crescimento" },
+      { title: "vimore — Consultoria de tecnologia para empresas em crescimento" },
       {
         name: "description",
         content:
           "Infraestrutura, dados, cibersegurança e automação para pequenas e médias empresas no Brasil. Engenharia que sustenta operações — sem promessas vagas.",
       },
-      { property: "og:title", content: "Aevum IT — Tecnologia que sustenta a operação" },
+      { property: "og:title", content: "vimore — Tecnologia que sustenta a operação" },
       { property: "og:description", content: "Consultoria brasileira de infraestrutura, dados, segurança e automação para PMEs." },
       { property: "og:url", content: "/" },
     ],
@@ -64,18 +64,18 @@ function HomePage() {
       <section className="border-b border-border">
         <div className="container-page pt-20 pb-24 md:pt-28 md:pb-32 grid gap-12 md:grid-cols-[1.5fr_1fr] md:items-end">
           <div>
-            <p className="overline-accent">Aevum IT · Consultoria de tecnologia</p>
+            <p className="overline-accent">vimore · Parceira técnica</p>
             <h1 className="mt-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.05]">
-              Tecnologia que sustenta<br/>
-              a sua operação —<br/>
-              <span className="text-accent">não a complica.</span>
+              Vamos entender<br/>
+              o que está travando<br/>
+              <span className="text-accent">a sua operação.</span>
             </h1>
             <p className="mt-8 max-w-xl text-lg text-muted-foreground">
               Somos três engenheiros que operam ambientes de produção todos os
-              dias. Ajudamos pequenas e médias empresas brasileiras a estabilizar
-              infraestrutura, organizar dados, proteger informação e automatizar
-              processos. Sem jargão, sem terceirização, com responsabilidade
-              técnica de quem assina o código.
+              dias. Sentamos com o seu time, escutamos o problema na linguagem
+              do negócio e devolvemos uma solução técnica que cabe na sua
+              realidade — infraestrutura, dados, segurança e automação, sem
+              jargão e sem terceirização invisível.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
@@ -148,7 +148,7 @@ function HomePage() {
       <section aria-labelledby="por-que" className="border-b border-border">
         <div className="container-page py-20 md:py-28 grid gap-12 md:grid-cols-2">
           <div>
-            <p className="overline-accent">Por que a Aevum</p>
+            <p className="overline-accent">Por que a vimore</p>
             <h2 id="por-que" className="mt-4 text-3xl md:text-4xl">
               Engenharia operada<br/>por quem assina o código.
             </h2>

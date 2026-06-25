@@ -32,10 +32,10 @@ export const Route = createFileRoute("/blog/$slug")({
     return post;
   },
   head: ({ loaderData, params }) => {
-    if (!loaderData) return { meta: [{ title: "Artigo — Aevum IT" }] };
+    if (!loaderData) return { meta: [{ title: "Artigo — vimore" }] };
     return {
       meta: [
-        { title: `${loaderData.titulo} — Aevum IT` },
+        { title: `${loaderData.titulo} — vimore` },
         { name: "description", content: loaderData.resumo },
         { property: "og:title", content: loaderData.titulo },
         { property: "og:description", content: loaderData.resumo },
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/blog/$slug")({
           datePublished: loaderData.data,
           dateModified: loaderData.atualizado,
           author: { "@type": "Person", name: loaderData.autor },
-          publisher: { "@type": "Organization", name: "Aevum IT" },
+          publisher: { "@type": "Organization", name: "vimore" },
         }),
       }],
     };
