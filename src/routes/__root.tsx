@@ -11,6 +11,7 @@ import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { whatsappLink } from "../lib/whatsapp";
 
 function NotFoundComponent() {
   return (
@@ -24,7 +25,7 @@ function NotFoundComponent() {
         </p>
         <Link
           to="/"
-          className="mt-8 inline-flex items-center gap-2 border border-border-strong px-5 py-3 text-sm uppercase tracking-widest hover:border-accent hover:text-accent transition"
+          className="btn mt-8 hover:border-accent hover:text-accent"
         >
           Voltar ao início
           <span aria-hidden>→</span>
@@ -53,13 +54,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <div className="mt-8 flex flex-wrap gap-3">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="border border-accent bg-accent px-5 py-3 text-sm uppercase tracking-widest text-accent-foreground hover:bg-transparent hover:text-accent transition"
+            className="btn border-accent bg-accent text-accent-foreground hover:bg-transparent hover:text-accent"
           >
             Tentar novamente
           </button>
           <a
             href="/"
-            className="border border-border-strong px-5 py-3 text-sm uppercase tracking-widest hover:border-accent hover:text-accent transition"
+            className="btn hover:border-accent hover:text-accent"
           >
             Ir para o início
           </a>
@@ -116,7 +117,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "vimore" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
+      { property: "og:image", content: "/og-image.svg" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/og-image.svg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -170,7 +175,7 @@ function RootComponent() {
 function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header className="sticky top-0 z-40 border-b border-border bg-background">
       <div className="container-page flex h-16 items-center justify-between">
         <Link to="/" className="group inline-flex flex-col leading-none" aria-label="vimore — início">
           <span className="font-display text-[1.35rem] font-medium tracking-tight lowercase">
@@ -183,17 +188,19 @@ function SiteHeader() {
             <NavItem to="/">Início</NavItem>
             <NavItem to="/servicos">Serviços</NavItem>
             <NavItem to="/sobre">Sobre</NavItem>
-            <NavItem to="/blog">Insights</NavItem>
+            <NavItem to="/blog">Artigos</NavItem>
             <NavItem to="/contato">Contato</NavItem>
           </ul>
         </nav>
         <div className="hidden md:block">
-          <Link
-            to="/contato"
-            className="border border-border-strong px-4 py-2 text-xs uppercase tracking-widest hover:border-accent hover:text-accent transition"
+          <a
+            href={whatsappLink("a vimore")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-border-strong px-4 py-2 text-sm hover:border-accent hover:text-accent transition"
           >
-            Falar com um especialista
-          </Link>
+            Falar com especialista
+          </a>
         </div>
         <button
           type="button"
@@ -215,7 +222,7 @@ function SiteHeader() {
             <MobileItem to="/" onClick={() => setOpen(false)}>Início</MobileItem>
             <MobileItem to="/servicos" onClick={() => setOpen(false)}>Serviços</MobileItem>
             <MobileItem to="/sobre" onClick={() => setOpen(false)}>Sobre</MobileItem>
-            <MobileItem to="/blog" onClick={() => setOpen(false)}>Insights</MobileItem>
+            <MobileItem to="/blog" onClick={() => setOpen(false)}>Artigos</MobileItem>
             <MobileItem to="/contato" onClick={() => setOpen(false)}>Contato</MobileItem>
           </ul>
         </nav>
@@ -268,7 +275,7 @@ function SiteFooter() {
               vimore<span className="text-accent">.</span>
             </span>
             <span aria-hidden className="mt-1 h-[2px] w-9 bg-accent" />
-            <span className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-subtle">
+            <span className="mt-3 font-mono text-[0.78rem] text-subtle">
               Infra · Dados · Segurança
             </span>
           </div>
@@ -282,7 +289,7 @@ function SiteFooter() {
         <FooterCol title="Empresa" items={[
           { to: "/sobre", label: "Sobre" },
           { to: "/servicos", label: "Serviços" },
-          { to: "/blog", label: "Insights" },
+          { to: "/blog", label: "Artigos" },
           { to: "/contato", label: "Contato" },
         ]} />
         <FooterCol title="Serviços" items={[
@@ -296,6 +303,7 @@ function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><a className="text-muted-foreground hover:text-accent transition" href="mailto:contato@vimore.com.br">contato@vimore.com.br</a></li>
             <li><a className="text-muted-foreground hover:text-accent transition" href="tel:+5511000000000">+55 (11) 0000-0000</a></li>
+            <li><a className="text-muted-foreground hover:text-accent transition" href={whatsappLink("uma das frentes da vimore")} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
             <li className="text-muted-foreground">Seg–Sex · 9h às 18h</li>
           </ul>
         </div>

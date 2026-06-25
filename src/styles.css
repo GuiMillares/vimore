@@ -98,6 +98,12 @@
     color: var(--color-foreground);
   }
 
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+
   ::selection {
     background: var(--accent);
     color: var(--accent-foreground);
@@ -121,19 +127,50 @@
 }
 
 @utility overline {
+  display: grid;
+  width: max-content;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--color-subtle);
 }
 
 @utility overline-accent {
+  display: grid;
+  width: max-content;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   color: var(--color-accent);
+}
+
+.overline,
+.overline-accent {
+  text-decoration-line: none;
+}
+
+.overline::before,
+.overline-accent::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 1px;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-accent);
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border-strong);
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
 }
 
 @utility rule {
@@ -147,6 +184,17 @@
     radial-gradient(oklch(0.4 0.005 280 / 0.35) 1px, transparent 1px);
   background-size: 24px 24px;
   background-position: 0 0;
+}
+
+@utility tag-chip {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.65rem;
 }
 
 @utility link-underline {

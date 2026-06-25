@@ -1,97 +1,72 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { whatsappLink } from "../lib/whatsapp";
+import { Breadcrumbs, breadcrumbJsonLd } from "../components/Breadcrumbs";
+
+const breadcrumbItems = [
+  { label: "Início", to: "/" },
+  { label: "Serviços" },
+];
 
 const services = [
   {
     n: "01",
     id: "infraestrutura",
+    label: "Infraestrutura e cloud",
     title: "Infraestrutura Inteligente e Cloud",
+    headline: "Quando o servidor cai, a operação para — e o prejuízo começa a contar.",
     lede:
       "Infraestrutura inteligente é a base de redes, servidores e nuvem desenhada para sustentar a operação sem interrupções e crescer junto com a empresa.",
-    body:
-      "Construímos o chão da operação digital. Isso vai do cabo de rede ao cluster em nuvem: projetamos o caminho que os dados percorrem, escolhemos os equipamentos certos, configuramos monitoramento ativo e documentamos tudo para que sua equipe não dependa de uma única pessoa para entender o ambiente.",
-    items: [
-      {
-        h: "Arquitetura e Redes Corporativas",
-        p: "Projeto e implementação de redes robustas — roteadores, switches gerenciáveis, access points corporativos e cabeamento estruturado. Segmentação por VLANs, política de QoS e redundância onde faz diferença.",
-      },
-      {
-        h: "Cloud e DevOps na AWS",
-        p: "Migração e sustentação de ambientes AWS com Docker, Terraform e Linux Server. Infraestrutura como código, ambientes reproduzíveis e estratégias de alta disponibilidade dimensionadas ao porte real do negócio — não ao folheto do fabricante.",
-      },
-      {
-        h: "Monitoramento Proativo",
-        p: "Painéis em tempo real com Zabbix e Grafana. Alertas que disparam antes do usuário perceber, métricas de capacidade que evitam compras emergenciais e relatórios mensais de saúde do ambiente.",
-      },
+    paragraphs: [
+      "Rede mal projetada e servidor sem monitoramento são a causa mais comum de parada não planejada. Projetamos a rede física — roteadores, switches gerenciáveis, access points corporativos, cabeamento estruturado — para que uma falha isolada não derrube a operação inteira.",
+      "Migramos e sustentamos cargas na AWS com Docker, Terraform e Linux Server. Infraestrutura como código significa que o ambiente é documentado e reproduzível, e não depende da memória de uma única pessoa.",
+      "Zabbix e Grafana monitoram a operação em tempo real, com alertas que disparam antes do usuário perceber. Ambientes bem monitorados sustentam 99,9% de uptime sem aumentar o custo de operação.",
     ],
+    stack: ["AWS", "Docker", "Terraform", "Linux Server", "Zabbix", "Grafana"],
   },
   {
     n: "02",
     id: "dados",
+    label: "Dados e BI",
     title: "Dados e Inteligência de Negócios (BI)",
+    headline: "Você não sabe para onde vai o seu custo de TI porque a informação está espalhada em planilhas.",
     lede:
       "Inteligência de negócios é a prática de transformar dados operacionais em informação clara para decisão — e em economia mensurável.",
-    body:
-      "Se o gestor passa o dia consolidando planilhas, os dados estão trabalhando contra o negócio. A gente reorganiza o fluxo: define a fonte de verdade, automatiza a coleta, modela os indicadores que importam e entrega dashboards que respondem perguntas de negócio em poucos cliques.",
-    items: [
-      {
-        h: "Dashboards e Relatórios em Power BI",
-        p: "Painéis interativos desenhados para o público real (diretoria, comercial, operação), com filtros que fazem sentido para o dia a dia e governança de acesso. Treinamos a equipe interna para sustentar o material.",
-      },
-      {
-        h: "Engenharia e Arquitetura de Dados",
-        p: "Estruturação de bancos relacionais, processos de integração (ETL) e modelagem dimensional. Pipelines documentados, com testes e versionamento, para que o relatório de amanhã não dependa do humor da planilha de ontem.",
-      },
-      {
-        h: "Otimização de Custos de Dados",
-        p: "Análise de ambientes como Databricks com foco em redução de custo: dimensionamento de clusters, revisão de jobs e políticas de retenção. Em projetos recentes reduzimos consumo sem comprometer o SLA do relatório.",
-      },
+    paragraphs: [
+      "Sem uma fonte única de verdade, cada relatório usa um número diferente e a diretoria decide no escuro. Construímos dashboards em Power BI desenhados para o público real — diretoria, comercial, operação — com governança de acesso.",
+      "Estruturamos bancos relacionais e processos de integração (ETL) com modelagem dimensional documentada, testada e versionada, para que o relatório de amanhã não dependa do humor da planilha de ontem.",
+      "Revisamos ambientes como Databricks com foco em custo: dimensionamento de cluster, revisão de jobs, políticas de retenção. Em projetos recentes reduzimos o custo de dados em até 40% sem comprometer o SLA do relatório.",
     ],
+    stack: ["Power BI", "ETL", "Modelagem de dados", "Databricks"],
   },
   {
     n: "03",
     id: "seguranca",
+    label: "Cibersegurança e suporte",
     title: "Cibersegurança e Suporte Técnico (ITSM)",
+    headline: "Um chamado perdido custa uma reunião inteira — e ninguém mede isso até virar rotina.",
     lede:
-      "Cibersegurança e suporte técnico, juntos, protegem a informação da empresa e mantêm a equipe produtiva — sem paradas que custam reuniões inteiras.",
-    body:
-      "Segurança e suporte costumam viver em silos diferentes; a gente trata como o mesmo problema. Avaliamos o ambiente segundo as melhores práticas das normas ISO, organizamos o suporte com ferramentas profissionais e implementamos as políticas que reduzem o risco real, sem teatro de compliance.",
-    items: [
-      {
-        h: "Diagnóstico de Conformidade",
-        p: "Avaliação de aderência às normas de segurança da família ISO, com apoio à adequação. É diagnóstico técnico e plano de ação — não emitimos certificação formal, mas preparamos o ambiente para auditoria.",
-      },
-      {
-        h: "Service Desk Especializado",
-        p: "Estruturação e operação de suporte com GLPI e ZohoDesk. SLA acordado, base de conhecimento ativa e indicadores que mostram onde a operação está sangrando tempo.",
-      },
-      {
-        h: "Segurança de Redes e Acesso",
-        p: "Políticas de acesso por perfil, segmentação de rede, MFA, hardening de servidores e revisão de regras de firewall. Boas práticas aplicadas ao porte real da empresa, sem comprar fortaleza para guardar bicicleta.",
-      },
+      "Cibersegurança e suporte técnico, juntos, protegem a informação da empresa e mantêm a equipe produtiva, sem paradas que custam tempo de reunião.",
+    paragraphs: [
+      "Diagnosticamos a aderência do ambiente às normas de segurança da família ISO — avaliação técnica e plano de ação, não certificação formal — e preparamos o terreno para uma auditoria futura.",
+      "Organizamos o suporte com ferramentas profissionais como GLPI e ZohoDesk: SLA acordado, base de conhecimento ativa e indicadores que mostram onde a operação está sangrando tempo.",
+      "Políticas de acesso por perfil, segmentação de rede, MFA e hardening de servidores reduzem a superfície de risco real da empresa, sem comprar fortaleza para guardar bicicleta.",
     ],
+    stack: ["GLPI", "ZohoDesk", "Diagnóstico ISO", "MFA"],
   },
   {
     n: "04",
     id: "automacao",
+    label: "Automação e desenvolvimento",
     title: "Automação, Integrações e Desenvolvimento",
+    headline: "Toda PME tem uma planilha que liga o ERP ao CRM na mão — e quem mantém essa ponte sabe que ela vai quebrar.",
     lede:
       "Automação e integração são o que conecta os sistemas que a empresa já usa, eliminando trabalho manual repetitivo e erros de digitação.",
-    body:
-      "Quase toda PME tem uma pasta de planilhas que liga manualmente o ERP ao CRM ao financeiro. A gente substitui essa pasta por código: rotinas em Python, infraestrutura em Terraform, integrações via API. Quando faz sentido, construímos do zero — site institucional, portal interno ou landing page — com o mesmo padrão de engenharia.",
-    items: [
-      {
-        h: "Automação de Processos",
-        p: "Rotinas em Python e Terraform que substituem trabalho manual recorrente: conciliações, importações, sincronizações entre sistemas. Cada automação entra em produção com logs, retentativas e alerta de falha.",
-      },
-      {
-        h: "Integração de Sistemas e IA",
-        p: "Conexão entre ERPs, CRMs e plataformas de marketing usando APIs REST, Webhooks, OAuth2 e MCP. Integramos também ferramentas de IA aos processos onde elas agregam — não onde estão na moda.",
-      },
-      {
-        h: "Presença Digital",
-        p: "Sites institucionais, portais e landing pages em WordPress, React, Node.js e Firebase. SEO técnico, performance e acessibilidade tratados como requisito, não como bônus.",
-      },
+    paragraphs: [
+      "Substituímos a ponte manual por código: rotinas em Python e Terraform que automatizam conciliações, importações e sincronizações entre sistemas, com logs, retentativas e alerta de falha em produção.",
+      "Integramos ERPs, CRMs e plataformas de marketing via APIs REST, Webhooks, OAuth2 e MCP — incluindo ferramentas de IA, quando elas resolvem um problema real e não apenas seguem a moda.",
+      "Quando faz sentido, construímos do zero: sites institucionais, portais internos e landing pages em WordPress, React, Node.js e Firebase, com SEO técnico e performance tratados como requisito.",
     ],
+    stack: ["Python", "Terraform", "REST APIs", "OAuth2", "MCP", "React", "Node.js", "Firebase"],
   },
 ];
 
@@ -147,14 +122,7 @@ export const Route = createFileRoute("/servicos")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Início", item: "/" },
-            { "@type": "ListItem", position: 2, name: "Serviços", item: "/servicos" },
-          ],
-        }),
+        children: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)),
       },
       {
         type: "application/ld+json",
@@ -191,7 +159,8 @@ function ServicosPage() {
     <>
       <section className="border-b border-border">
         <div className="container-page pt-20 pb-16 md:pt-28 md:pb-24 max-w-4xl">
-          <p className="overline-accent">Serviços</p>
+          <Breadcrumbs items={breadcrumbItems} />
+          <p className="overline-accent mt-6">Serviços</p>
           <h1 className="mt-6 text-4xl md:text-6xl">
             Quatro frentes de engenharia,<br/>
             <span className="text-accent">um único time responsável.</span>
@@ -204,33 +173,63 @@ function ServicosPage() {
         </div>
       </section>
 
-      {services.map((s) => (
-        <section
-          key={s.id}
-          id={s.id}
-          aria-labelledby={`${s.id}-titulo`}
-          className="border-b border-border scroll-mt-20"
-        >
-          <div className="container-page py-20 md:py-28 grid gap-12 md:grid-cols-[1fr_2fr]">
-            <div className="md:sticky md:top-24 md:self-start">
-              <p className="font-mono text-sm text-accent">{s.n} / 04</p>
-              <h2 id={`${s.id}-titulo`} className="mt-4 text-3xl md:text-4xl">{s.title}</h2>
-              <p className="mt-6 text-muted-foreground">{s.lede}</p>
+      {services.map((s, i) => {
+        const reversed = i % 2 === 1;
+        return (
+          <section
+            key={s.id}
+            id={s.id}
+            aria-labelledby={`${s.id}-titulo`}
+            className="border-b border-border scroll-mt-20"
+          >
+            <div
+              className={`container-page py-20 md:py-28 flex flex-col gap-12 md:gap-16 md:items-start ${
+                reversed ? "md:flex-row-reverse" : "md:flex-row"
+              }`}
+            >
+              <article className="md:flex-[3]">
+                <p className="overline">{s.label}</p>
+                <h2 id={`${s.id}-titulo`} className="mt-4 text-2xl md:text-4xl max-w-2xl">
+                  {s.headline}
+                </h2>
+                <p className="mt-6 text-lg text-foreground max-w-2xl">{s.lede}</p>
+                <div className="mt-8 space-y-4 max-w-2xl text-muted-foreground">
+                  {s.paragraphs.map((p, idx) => (
+                    <p key={idx}>{p}</p>
+                  ))}
+                </div>
+                <ul className="mt-8 flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
+                  {s.stack.map((t) => (
+                    <li key={t} className="tag-chip">{t}</li>
+                  ))}
+                </ul>
+                <a
+                  href={whatsappLink(s.title)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn mt-8 bg-accent text-accent-foreground border-accent hover:bg-transparent hover:text-accent"
+                >
+                  Falar com especialista
+                  <span aria-hidden>→</span>
+                </a>
+              </article>
+
+              <aside
+                aria-hidden="true"
+                className="md:flex-[2] md:sticky md:top-24 select-none"
+              >
+                <div className="relative border border-border bg-surface px-8 py-10 overflow-hidden">
+                  <span aria-hidden className="block h-[2px] w-10 bg-accent" />
+                  <span className="mt-6 block font-display text-[5.5rem] leading-none font-medium text-foreground/[0.08]">
+                    {s.n}
+                  </span>
+                  <p className="mt-2 font-mono text-sm text-subtle">Frente {s.n} de 04</p>
+                </div>
+              </aside>
             </div>
-            <div>
-              <p className="text-lg text-foreground">{s.body}</p>
-              <ul className="mt-10 space-y-px bg-border">
-                {s.items.map((it) => (
-                  <li key={it.h} className="bg-background p-6">
-                    <h3 className="text-lg">{it.h}</h3>
-                    <p className="mt-2 text-muted-foreground">{it.p}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       {/* FAQ */}
       <section aria-labelledby="faq" className="border-b border-border">
@@ -263,7 +262,7 @@ function ServicosPage() {
       <section className="grid-bg">
         <div className="container-page py-24 md:py-28 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl">
-            Pronto para destravar uma frente?
+            Pronto para resolver isso na sua operação?
           </h2>
           <p className="mt-6 text-muted-foreground md:text-lg">
             Diga em uma frase o que está custando tempo ou dinheiro hoje. A
@@ -271,9 +270,9 @@ function ServicosPage() {
           </p>
           <Link
             to="/contato"
-            className="mt-10 inline-flex items-center gap-3 bg-accent px-7 py-4 text-sm uppercase tracking-widest text-accent-foreground border border-accent hover:bg-transparent hover:text-accent transition"
+            className="btn mt-10 bg-accent text-accent-foreground border-accent hover:bg-transparent hover:text-accent"
           >
-            Falar com um especialista
+            Falar pelo formulário
             <span aria-hidden>→</span>
           </Link>
         </div>

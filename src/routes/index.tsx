@@ -20,7 +20,6 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    n: "01",
     id: "infraestrutura",
     title: "Infraestrutura Inteligente e Cloud",
     summary:
@@ -29,7 +28,6 @@ const services = [
       "Projetamos redes corporativas (roteadores, switches, access points, cabeamento estruturado), migramos cargas para AWS com Docker, Terraform e Linux Server, e instalamos monitoramento ativo com Zabbix e Grafana para que falhas sejam detectadas antes de afetarem a operação.",
   },
   {
-    n: "02",
     id: "dados",
     title: "Dados e Inteligência de Negócios",
     summary:
@@ -38,7 +36,6 @@ const services = [
       "Construímos dashboards em Power BI, estruturamos bancos e processos de integração (ETL) e revisamos ambientes Databricks para reduzir custo. O resultado é informação confiável, acessível e barata de manter.",
   },
   {
-    n: "03",
     id: "seguranca",
     title: "Cibersegurança e Suporte Técnico",
     summary:
@@ -47,7 +44,6 @@ const services = [
       "Diagnóstico de aderência às normas ISO de segurança (avaliação, não certificação formal), Service Desk com GLPI e ZohoDesk, e políticas de acesso e segmentação de rede para reduzir a superfície de risco do ambiente corporativo.",
   },
   {
-    n: "04",
     id: "automacao",
     title: "Automação, Integrações e Desenvolvimento",
     summary:
@@ -80,14 +76,14 @@ function HomePage() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 to="/contato"
-                className="inline-flex items-center gap-3 bg-accent px-6 py-3.5 text-sm uppercase tracking-widest text-accent-foreground border border-accent hover:bg-transparent hover:text-accent transition"
+                className="btn bg-accent text-accent-foreground border-accent hover:bg-transparent hover:text-accent"
               >
                 Agendar conversa
                 <span aria-hidden>→</span>
               </Link>
               <Link
                 to="/servicos"
-                className="inline-flex items-center gap-3 border border-border-strong px-6 py-3.5 text-sm uppercase tracking-widest hover:border-accent hover:text-accent transition"
+                className="btn hover:border-accent hover:text-accent"
               >
                 Ver serviços
               </Link>
@@ -96,9 +92,9 @@ function HomePage() {
 
           <aside aria-label="Resumo da empresa" className="md:border-l md:border-border md:pl-10">
             <dl className="space-y-8 font-mono text-sm">
-              <Stat k="Fundação" v="3 engenheiros atuantes" />
+              <Stat k="Equipe" v="3 engenheiros sócios" />
               <Stat k="Base" v="São Paulo · Brasil" />
-              <Stat k="Stack" v="AWS · Terraform · Python · Power BI" />
+              <Stat k="Tecnologias" v="AWS · Terraform · Python · Power BI" />
               <Stat k="Foco" v="PMEs em crescimento" />
             </dl>
           </aside>
@@ -110,9 +106,9 @@ function HomePage() {
         <div className="container-page pt-20 pb-24">
           <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:items-end mb-16">
             <div>
-              <p className="overline">Índice · 01 / 04</p>
+              <p className="overline">Áreas de atuação</p>
               <h2 id="servicos-titulo" className="mt-4 text-3xl md:text-4xl">
-                Quatro frentes,<br/>um time só.
+                Quatro frentes de TI,<br/>um único time.
               </h2>
             </div>
             <p className="text-muted-foreground md:text-lg max-w-2xl">
@@ -124,8 +120,7 @@ function HomePage() {
 
           <ol className="space-y-0">
             {services.map((s, i) => (
-              <li key={s.id} className={`grid gap-6 md:grid-cols-[6rem_1fr_2fr] py-10 ${i !== 0 ? "border-t border-border" : "border-t border-border-strong"}`}>
-                <span className="font-mono text-sm text-accent">{s.n} /</span>
+              <li key={s.id} className={`grid gap-6 md:grid-cols-[1fr_2fr] py-10 ${i !== 0 ? "border-t border-border" : "border-t border-border-strong"}`}>
                 <h3 className="text-xl md:text-2xl">{s.title}</h3>
                 <div>
                   <p className="text-foreground">{s.summary}</p>
@@ -150,7 +145,7 @@ function HomePage() {
           <div>
             <p className="overline-accent">Por que a vimore</p>
             <h2 id="por-que" className="mt-4 text-3xl md:text-4xl">
-              Engenharia operada<br/>por quem assina o código.
+              Os mesmos engenheiros que<br/>projetam a solução são os que a operam.
             </h2>
             <p className="mt-6 text-muted-foreground md:text-lg">
               A maior parte das consultorias de TI vende horas. A gente vende
@@ -195,7 +190,7 @@ function HomePage() {
           </p>
           <Link
             to="/contato"
-            className="mt-10 inline-flex items-center gap-3 bg-accent px-7 py-4 text-sm uppercase tracking-widest text-accent-foreground border border-accent hover:bg-transparent hover:text-accent transition"
+            className="btn mt-10 bg-accent text-accent-foreground border-accent hover:bg-transparent hover:text-accent"
           >
             Agendar conversa
             <span aria-hidden>→</span>

@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
+import { whatsappLink } from "../lib/whatsapp";
+import { Breadcrumbs, breadcrumbJsonLd } from "../components/Breadcrumbs";
+
+const breadcrumbItems = [
+  { label: "Início", to: "/" },
+  { label: "Contato" },
+];
 
 const schema = z.object({
   nome: z.string().trim().min(2, "Informe seu nome").max(100),
@@ -23,6 +30,12 @@ export const Route = createFileRoute("/contato")({
       { property: "og:url", content: "/contato" },
     ],
     links: [{ rel: "canonical", href: "/contato" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)),
+      },
+    ],
   }),
   component: ContatoPage,
 });
@@ -49,7 +62,8 @@ function ContatoPage() {
     <>
       <section className="border-b border-border">
         <div className="container-page pt-20 pb-12 md:pt-28 md:pb-16 max-w-4xl">
-          <p className="overline-accent">Contato</p>
+          <Breadcrumbs items={breadcrumbItems} />
+          <p className="overline-accent mt-6">Contato</p>
           <h1 className="mt-6 text-4xl md:text-6xl">
             Vamos conversar<br/>
             <span className="text-accent">sobre o seu problema.</span>
@@ -64,7 +78,7 @@ function ContatoPage() {
       <section className="border-b border-border">
         <div className="container-page py-16 md:py-20 grid gap-12 md:grid-cols-[2fr_1fr]">
           <div>
-            <h2 className="text-2xl md:text-3xl">Formulário</h2>
+            <h2 className="text-2xl md:text-3xl">Envie sua mensagem para a vimore</h2>
             {sent ? (
               <div role="status" className="mt-8 border border-accent p-8">
                 <p className="overline-accent">Mensagem registrada</p>
@@ -96,7 +110,7 @@ function ContatoPage() {
                 </div>
                 <button
                   type="submit"
-                  className="justify-self-start inline-flex items-center gap-3 bg-accent px-7 py-4 text-sm uppercase tracking-widest text-accent-foreground border border-accent hover:bg-transparent hover:text-accent transition"
+                  className="btn justify-self-start bg-accent text-accent-foreground border-accent hover:bg-transparent hover:text-accent"
                 >
                   Enviar mensagem
                   <span aria-hidden>→</span>
@@ -112,7 +126,8 @@ function ContatoPage() {
           <aside aria-label="Canais diretos" className="md:border-l md:border-border md:pl-10">
             <dl className="space-y-8">
               <Channel k="E-mail" v={<a className="text-foreground hover:text-accent transition" href="mailto:contato@vimore.com.br">contato@vimore.com.br</a>} />
-              <Channel k="Telefone · WhatsApp" v={<a className="text-foreground hover:text-accent transition" href="tel:+5511000000000">+55 (11) 0000-0000</a>} />
+              <Channel k="Telefone" v={<a className="text-foreground hover:text-accent transition" href="tel:+5511000000000">+55 (11) 0000-0000</a>} />
+              <Channel k="WhatsApp" v={<a className="text-foreground hover:text-accent transition" href={whatsappLink("a vimore")} target="_blank" rel="noopener noreferrer">Iniciar conversa <span aria-hidden>→</span></a>} />
               <Channel k="Localização" v={<span className="text-foreground">São Paulo · SP<br/>Atendimento na região metropolitana</span>} />
               <Channel k="Horário" v={<span className="text-foreground">Seg–Sex · 9h às 18h<br/>(Resposta em até 1 dia útil)</span>} />
             </dl>

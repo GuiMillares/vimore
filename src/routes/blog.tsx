@@ -1,4 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Breadcrumbs, breadcrumbJsonLd } from "../components/Breadcrumbs";
+
+const breadcrumbItems = [
+  { label: "Início", to: "/" },
+  { label: "Artigos" },
+];
 
 const posts = [
   {
@@ -15,17 +21,23 @@ const posts = [
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Insights — vimore · Notas técnicas para decisores de TI" },
+      { title: "Artigos — vimore · Notas técnicas para decisores de TI" },
       {
         name: "description",
         content:
           "Artigos curtos e práticos sobre infraestrutura, dados, segurança e automação para gestores de pequenas e médias empresas no Brasil.",
       },
-      { property: "og:title", content: "Insights — vimore" },
+      { property: "og:title", content: "Artigos — vimore" },
       { property: "og:description", content: "Notas técnicas para quem toma decisão de TI em PMEs." },
       { property: "og:url", content: "/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(breadcrumbJsonLd(breadcrumbItems)),
+      },
+    ],
   }),
   component: BlogIndex,
 });
@@ -35,7 +47,8 @@ function BlogIndex() {
     <>
       <section className="border-b border-border">
         <div className="container-page pt-20 pb-12 md:pt-28 md:pb-16 max-w-4xl">
-          <p className="overline-accent">Insights</p>
+          <Breadcrumbs items={breadcrumbItems} />
+          <p className="overline-accent mt-6">Artigos</p>
           <h1 className="mt-6 text-4xl md:text-6xl">
             Notas técnicas para<br/>
             <span className="text-accent">decisores de TI.</span>
