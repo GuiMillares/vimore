@@ -263,16 +263,19 @@ function SiteFooter() {
     <footer className="border-t border-border mt-24">
       <div className="container-page py-16 grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span aria-hidden className="inline-block h-2 w-2 rotate-45 bg-accent" />
-            <span className="font-display text-[1.05rem] font-medium tracking-tight">
-              vimore<span className="text-accent">.</span>IT
+          <div className="inline-flex flex-col leading-none">
+            <span className="font-display text-[1.35rem] font-medium tracking-tight lowercase">
+              vimore<span className="text-accent">.</span>
+            </span>
+            <span aria-hidden className="mt-1 h-[2px] w-9 bg-accent" />
+            <span className="mt-3 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-subtle">
+              Infra · Dados · Segurança
             </span>
           </div>
-          <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Consultoria de tecnologia para pequenas e médias empresas
-            brasileiras. Infraestrutura, dados, segurança e automação — feitos
-            por engenheiros que operam ambientes de produção.
+          <p className="mt-6 max-w-sm text-sm text-muted-foreground">
+            Parceira técnica próxima para pequenas e médias empresas
+            brasileiras. Três engenheiros que entendem o que está travando
+            a sua operação — e resolvem.
           </p>
           <p className="mt-6 overline">São Paulo · Brasil</p>
         </div>
